@@ -1,0 +1,139 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-image: url(chr.jpg);
+    background-repeat: repeat-x;
+}
+
+body div .tree{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-repeat: repeat-x;
+}
+
+.tree{
+    position: relative;
+    top: -670px;
+    width: 300px;
+    height: 300px;
+    left:950px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation: animate 4s linear infinite;
+}
+
+
+.tree::before{
+    content: '\2B50';
+    position: absolute;
+    top: -100px;
+    left: calc(50% - 32px);
+    font-size: 3em;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+    100%{
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+}
+.tree div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(calc(100px * var(--j)));
+}
+.tree div.top span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,#69c0a8,#8edd77);
+    clip-path: polygon(50% 0%,0% 100%,100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translatez(173px) ;
+}
+
+.tree div.bottom span{
+    position: absolute;
+    top: 350px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(90deg, #c18044, #795548);
+    /* clip-path: polygon(50% 0%,0% 100%,100% 100%); */
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i)))  translatez(30px) ;
+}
+.shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #0003;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-500px);
+    filter: blur(15px);
+}
+.title-word {
+    animation: color-animation 4s linear infinite;
+  }
+  
+  .title-word-1 {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+  }
+  
+  .title-word-2 {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+  
+  /* Here are just some visual styles. 🖌 */
+  
+  .container {
+    display: grid;
+    height: 100vh
+  }
+  
+  .title {
+    font-family: cursive;
+    font-weight: 800;
+    font-size: 5.5vw;
+    text-transform: uppercase;
+  }
+img{
+    height: 500px;
+    width:500px;
+    margin-top: -516px;
+}
